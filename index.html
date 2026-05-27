@@ -3,204 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gungun Aggarwal | Software Engineer Portfolio</title>
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Portfolio of Gungun Aggarwal, a Software Engineer and Computer Science student specializing in Spring Boot, Microservices, Machine Learning, and Algorithms.">
-    <meta name="keywords" content="Gungun Aggarwal, Software Engineer, Spring Boot, Java, Angular, Machine Learning, Python, Portfolio">
+    <title>Gungun Aggarwal — Software Engineer</title>
+    <meta name="description" content="Portfolio of Gungun Aggarwal — Software Engineer specializing in Spring Boot Microservices, Machine Learning, and Full Stack Development.">
+    <meta name="keywords" content="Gungun Aggarwal, Software Engineer, Spring Boot, Java, Machine Learning, Angular, Portfolio">
     <meta name="author" content="Gungun Aggarwal">
-    
-    <!-- Google Fonts -->
+
+    <!-- Google Fonts: Cormorant Garamond (editorial serif) + Space Grotesk (technical sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
-<body class="dark-theme">
-    <!-- Header / Navigation -->
-    <header class="navbar-header">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <span class="logo-accent">&lt;</span>Gungun<span class="logo-accent"> /&gt;</span>
-            </a>
-            <nav class="nav-links">
-                <a href="#about" class="nav-item active">About</a>
-                <a href="#skills" class="nav-item">Skills</a>
-                <a href="#experience" class="nav-item">Experience</a>
-                <a href="#projects" class="nav-item">Projects</a>
-                <a href="#certifications" class="nav-item">Certifications</a>
-                <a href="#contact" class="nav-item btn-contact">Get In Touch</a>
+<body class="dark">
+
+    <!-- Custom Liquid Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Floating Project Image Preview (follows mouse on project hover) -->
+    <div class="project-float-preview" id="project-float-preview">
+        <img src="" alt="" id="project-float-img">
+    </div>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="site-header" id="site-header">
+        <div class="header-inner">
+            <a href="#" class="logo-mark">G.A<span class="logo-dot">.</span></a>
+            <nav class="main-nav">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </nav>
-            <div class="nav-actions">
-                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
-                    <i data-lucide="moon" class="icon-moon"></i>
-                    <i data-lucide="sun" class="icon-sun"></i>
+            <div class="header-controls">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                    <span class="theme-label-dark">Dark</span>
+                    <span class="theme-label-light">Light</span>
+                    <span class="toggle-pill"></span>
                 </button>
-                <button class="mobile-menu-toggle" aria-label="Open Navigation Menu">
-                    <i data-lucide="menu" class="icon-menu"></i>
-                    <i data-lucide="x" class="icon-close"></i>
+                <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation">
+                    <span></span><span></span>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Nav Overlay -->
-    <div class="mobile-nav-overlay">
-        <nav class="mobile-nav-links">
-            <a href="#about" class="mobile-nav-item">About</a>
-            <a href="#skills" class="mobile-nav-item">Skills</a>
-            <a href="#experience" class="mobile-nav-item">Experience</a>
-            <a href="#projects" class="mobile-nav-item">Projects</a>
-            <a href="#certifications" class="mobile-nav-item">Certifications</a>
-            <a href="#contact" class="mobile-nav-item mobile-btn-contact">Get In Touch</a>
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <nav class="mobile-drawer-nav">
+            <a href="#about" class="drawer-link">About</a>
+            <a href="#experience" class="drawer-link">Experience</a>
+            <a href="#projects" class="drawer-link">Projects</a>
+            <a href="#contact" class="drawer-link">Contact</a>
         </nav>
     </div>
 
-    <!-- Hero Section -->
+    <!-- ===== HERO ===== -->
     <section class="hero-section" id="hero">
-        <div class="background-glows">
-            <div class="glow glow-1"></div>
-            <div class="glow glow-2"></div>
-        </div>
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="pulse-dot"></span> Open for Opportunities
-                </div>
-                <h1 class="hero-title">
-                    Hi, I'm <span class="gradient-text">Gungun Aggarwal</span>
+        <div class="hero-grid">
+            <div class="hero-meta">
+                <span class="meta-label reveal-up">Software Engineer · India</span>
+                <span class="availability-dot"><span class="dot-pulse"></span>Available</span>
+            </div>
+            <div class="hero-name-block">
+                <h1 class="hero-name reveal-up">
+                    <span class="name-line">Gungun</span>
+                    <span class="name-line italic">Aggarwal</span>
                 </h1>
-                <h2 class="hero-subtitle">
-                    I am a <span id="typing-text" class="typing-text"></span><span class="cursor">|</span>
-                </h2>
-                <p class="hero-description">
-                    B.Tech Computer Science & Engineering student at Lovely Professional University. I specialize in building robust backend microservices, real-time architectures, and machine learning pipelines.
-                </p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">
-                        View Projects <i data-lucide="arrow-right"></i>
-                    </a>
-                    <a href="#contact" class="btn btn-secondary">
-                        Contact Me
-                    </a>
-                    <a href="assets/Gungun_Aggarwal_Resume.pdf" download class="btn btn-tertiary" title="Download Resume">
-                        <i data-lucide="download"></i> Resume
-                    </a>
-                </div>
-                <div class="hero-socials">
-                    <a href="https://github.com/Gungunaggarwal" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="GitHub">
-                        <i data-lucide="github"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/gungunaggarwal" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="LinkedIn">
-                        <i data-lucide="linkedin"></i>
-                    </a>
-                    <a href="mailto:gungunaggarwal15@gmail.com" class="social-icon-link" aria-label="Email">
-                        <i data-lucide="mail"></i>
-                    </a>
-                </div>
             </div>
-            <div class="hero-graphic">
-                <div class="graphic-container">
-                    <div class="card-glass code-card animate-float">
-                        <div class="card-header">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
-                            <span class="file-name">Portfolio.java</span>
-                        </div>
-                        <div class="card-body">
-                            <pre><code><span class="keyword">public class</span> <span class="class-name">Gungun</span> {
-    <span class="keyword">private</span> <span class="type">String</span> role = <span class="string">"Software Engineer"</span>;
-    <span class="keyword">private</span> <span class="type">String[]</span> skills = {
-        <span class="string">"Spring Boot"</span>, <span class="string">"Docker"</span>,
-        <span class="string">"ML"</span>, <span class="string">"Data Structures"</span>
-    };
-
-    <span class="keyword">public void</span> <span class="method-name">code</span>() {
-        <span class="keyword">while</span>(<span class="keyword">true</span>) {
-            <span class="keyword">this</span>.solveProblems();
-            <span class="keyword">this</span>.buildScalableApps();
-        }
-    }
-}</code></pre>
-                        </div>
-                    </div>
-                    <!-- Behind-card glowing element -->
-                    <div class="graphic-glow"></div>
+            <div class="hero-right">
+                <p class="hero-tagline reveal-up">Building robust microservices, real-time systems, and machine learning pipelines that scale.</p>
+                <div class="hero-actions reveal-up">
+                    <a href="#projects" class="btn-primary">View Work</a>
+                    <a href="assets/Gungun_Aggarwal_Resume.pdf" download class="btn-ghost">Download CV</a>
+                </div>
+                <div class="hero-social-row reveal-up">
+                    <a href="https://github.com/Gungunaggarwal" target="_blank" rel="noopener" class="social-text-link">GitHub ↗</a>
+                    <a href="https://linkedin.com/in/gungunaggarwal" target="_blank" rel="noopener" class="social-text-link">LinkedIn ↗</a>
+                    <a href="mailto:gungunaggarwal15@gmail.com" class="social-text-link">Email ↗</a>
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <a href="#about" aria-label="Scroll Down">
-                <div class="mouse-wheel-container">
-                    <div class="mouse-wheel"></div>
-                </div>
-            </a>
+        <div class="hero-scroll-cue">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
         </div>
     </section>
 
-    <!-- About & Education Section -->
-    <section class="about-section" id="about">
-        <div class="section-container">
-            <h2 class="section-title text-center"><span class="gradient-text">About Me</span></h2>
-            <p class="section-subtitle text-center">My journey and educational background</p>
-            
-            <div class="about-grid">
-                <div class="about-info card-glass">
-                    <div class="about-avatar-container">
-                        <!-- We will generate a beautiful vector profile representation or show a premium placeholder -->
-                        <div class="avatar-glow"></div>
-                        <img src="assets/profile_avatar.png" alt="Gungun Aggarwal" class="avatar-img" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=Gungun&backgroundColor=0f172a'">
-                    </div>
-                    <div class="about-bio">
-                        <h3>Hi, I am Gungun</h3>
-                        <p class="bio-text">
-                            I am a Computer Science & Engineering undergraduate based in Panchkula, Haryana. I have a deep curiosity for understanding how large-scale, high-concurrency systems are engineered. My expertise lies in backend development using Java and Spring Boot, containerized microservices, and using Machine Learning models to solve practical real-world problems.
-                        </p>
-                        <div class="meta-info-grid">
-                            <div class="meta-item">
-                                <span class="meta-label">Location:</span>
-                                <span class="meta-val">Panchkula, Haryana</span>
-                            </div>
-                            <div class="meta-item">
-                                <span class="meta-label">Email:</span>
-                                <span class="meta-val"><a href="mailto:gungunaggarwal15@gmail.com">gungunaggarwal15@gmail.com</a></span>
-                            </div>
+    <!-- ===== ABOUT ===== -->
+    <section class="section" id="about">
+        <div class="section-inner">
+            <div class="section-label reveal-up">
+                <span class="label-num">01</span>
+                <span class="label-text">About</span>
+            </div>
+            <div class="about-layout">
+                <div class="about-bio reveal-up">
+                    <h2 class="section-heading">I engineer systems,<br><em>not just software.</em></h2>
+                    <p class="body-text">Computer Science & Engineering undergraduate from Lovely Professional University. I am drawn to building architectures that are reliable at scale — microservice backends, distributed message queues, predictive ML models. I work across the full stack but find depth in system design and backend engineering.</p>
+                    <div class="about-info-row">
+                        <div class="info-item">
+                            <span class="info-label">Location</span>
+                            <span class="info-val">Panchkula, Haryana</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Degree</span>
+                            <span class="info-val">B.Tech CSE · CGPA 7.07</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">University</span>
+                            <span class="info-val">LPU, Phagwara (2022–2026)</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Status</span>
+                            <span class="info-val status-open">Open to opportunities</span>
                         </div>
                     </div>
                 </div>
-
-                <div class="about-education">
-                    <div class="education-card card-glass">
-                        <div class="edu-header">
-                            <div class="edu-icon">
-                                <i data-lucide="graduation-cap"></i>
-                            </div>
-                            <div>
-                                <span class="timeline-date">2022 — 2026</span>
-                                <h3 class="edu-title">Lovely Professional University</h3>
-                                <p class="edu-subtitle">Phagwara, Punjab</p>
-                            </div>
+                <div class="about-skills-panel reveal-up">
+                    <div class="skills-group">
+                        <span class="skills-group-label">Languages</span>
+                        <div class="skill-tags">
+                            <span class="tag">Java</span><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">C++</span><span class="tag">JavaScript</span>
                         </div>
-                        <div class="edu-body">
-                            <h4 class="degree-title">B.Tech - Computer Science and Engineering</h4>
-                            <p class="gpa-badge">CGPA: 7.07 / 10.0</p>
-                            
-                            <h5 class="coursework-title">Key Coursework</h5>
-                            <div class="coursework-tags">
-                                <span class="course-tag">Data Structures & Algorithms</span>
-                                <span class="course-tag">Object Oriented Programming (OOP)</span>
-                                <span class="course-tag">Operating Systems</span>
-                                <span class="course-tag">Database Management Systems</span>
-                                <span class="course-tag">Computer Networks</span>
-                                <span class="course-tag">Software Engineering</span>
-                                <span class="course-tag">Rest APIs & Microservices</span>
-                                <span class="course-tag">Machine Learning</span>
-                            </div>
+                    </div>
+                    <div class="skills-group">
+                        <span class="skills-group-label">Frameworks</span>
+                        <div class="skill-tags">
+                            <span class="tag">Spring Boot</span><span class="tag">Spring Security</span><span class="tag">Angular</span><span class="tag">Microservices</span><span class="tag">REST APIs</span><span class="tag">JWT</span>
+                        </div>
+                    </div>
+                    <div class="skills-group">
+                        <span class="skills-group-label">Tools & Infra</span>
+                        <div class="skill-tags">
+                            <span class="tag">MySQL</span><span class="tag">Redis</span><span class="tag">RabbitMQ</span><span class="tag">Docker</span><span class="tag">Git</span><span class="tag">Swagger</span><span class="tag">Zipkin</span><span class="tag">Postman</span>
+                        </div>
+                    </div>
+                    <div class="skills-group">
+                        <span class="skills-group-label">Machine Learning</span>
+                        <div class="skill-tags">
+                            <span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">Scikit-Learn</span><span class="tag">LSTM</span><span class="tag">GRU</span><span class="tag">Streamlit</span>
                         </div>
                     </div>
                 </div>
@@ -208,394 +151,208 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills-section" id="skills">
-        <div class="section-container">
-            <h2 class="section-title text-center">My <span class="gradient-text">Skills</span></h2>
-            <p class="section-subtitle text-center">Tools and technologies I use to bring ideas to life</p>
-
-            <div class="skills-grid">
-                <!-- Category 1: Languages -->
-                <div class="skill-category-card card-glass">
-                    <div class="category-header">
-                        <div class="category-icon icon-cyan">
-                            <i data-lucide="code-2"></i>
+    <!-- ===== EXPERIENCE ===== -->
+    <section class="section" id="experience">
+        <div class="section-inner">
+            <div class="section-label reveal-up">
+                <span class="label-num">02</span>
+                <span class="label-text">Experience</span>
+            </div>
+            <div class="experience-list">
+                <!-- Capgemini -->
+                <div class="exp-item tilt-card reveal-up">
+                    <div class="exp-header">
+                        <div class="exp-title-group">
+                            <h3 class="exp-role">Full Stack Developer Trainee</h3>
+                            <span class="exp-company">Capgemini</span>
                         </div>
-                        <h3>Programming Languages</h3>
+                        <span class="exp-date">Dec 2025 — May 2026</span>
                     </div>
-                    <ul class="skill-list">
-                        <li>
-                            <div class="skill-info"><span>Java</span><span class="skill-level">Advanced</span></div>
-                            <div class="skill-bar"><div class="skill-progress bar-java" style="width: 90%;"></div></div>
-                        </li>
-                        <li>
-                            <div class="skill-info"><span>Python</span><span class="skill-level">Advanced</span></div>
-                            <div class="skill-bar"><div class="skill-progress bar-python" style="width: 85%;"></div></div>
-                        </li>
-                        <li>
-                            <div class="skill-info"><span>SQL</span><span class="skill-level">Intermediate</span></div>
-                            <div class="skill-bar"><div class="skill-progress bar-sql" style="width: 80%;"></div></div>
-                        </li>
-                        <li>
-                            <div class="skill-info"><span>C++</span><span class="skill-level">Intermediate</span></div>
-                            <div class="skill-bar"><div class="skill-progress bar-cpp" style="width: 75%;"></div></div>
-                        </li>
-                        <li>
-                            <div class="skill-info"><span>JavaScript</span><span class="skill-level">Intermediate</span></div>
-                            <div class="skill-bar"><div class="skill-progress bar-js" style="width: 70%;"></div></div>
-                        </li>
+                    <ul class="exp-points">
+                        <li>Collaborated in agile team environments building robust full-stack web applications using Java Spring Boot and Angular.</li>
+                        <li>Integrated RESTful APIs, implemented secure JWT authentication, and structured efficient MySQL database schemas for production applications.</li>
+                        <li>Participated in containerized deployments using Docker and contributed to automated unit and integration test pipelines for stable delivery.</li>
                     </ul>
+                    <div class="exp-tags">
+                        <span class="tag-sm">Spring Boot</span><span class="tag-sm">Angular</span><span class="tag-sm">JWT</span><span class="tag-sm">MySQL</span><span class="tag-sm">Docker</span>
+                    </div>
                 </div>
 
-                <!-- Category 2: Frameworks & Tech -->
-                <div class="skill-category-card card-glass">
-                    <div class="category-header">
-                        <div class="category-icon icon-purple">
-                            <i data-lucide="layers"></i>
-                        </div>
-                        <h3>Frameworks & Tech</h3>
-                    </div>
-                    <ul class="skill-list">
-                        <li>
-                            <div class="skill-info"><span>Spring Boot</span><span class="skill-level">Advanced</span></div>
-                            <div class="skill-bar"><div class="skill-progress bar-springboot" style="width: 90%;"></div></div>
-                        </li>
-                        <li>
-                            <div class="skill-info"><span>Spring Security</span><span class="skill-level">Intermediate</span></div>
-                            <div class="skill-bar"><div class="skill-progress bar-springsec" style="width: 80%;"></div></div>
-                        </li>
-                        <li>
-                            <div class="skill-info"><span>Microservices</span><span class="skill-level">Advanced</span></div>
-                            <div class="skill-bar"><div class="skill-progress bar-micro" style="width: 85%;"></div></div>
-                        </li>
-                        <li>
-                            <div class="skill-info"><span>Angular</span><span class="skill-level">Intermediate</span></div>
-                            <div class="skill-bar"><div class="skill-progress bar-angular" style="width: 75%;"></div></div>
-                        </li>
-                        <li>
-                            <div class="skill-info"><span>REST APIs & JWT</span><span class="skill-level">Advanced</span></div>
-                            <div class="skill-bar"><div class="skill-progress bar-rest" style="width: 90%;"></div></div>
-                        </li>
-                    </ul>
-                </div>
 
-                <!-- Category 3: Databases & Tools -->
-                <div class="skill-category-card card-glass">
-                    <div class="category-header">
-                        <div class="category-icon icon-pink">
-                            <i data-lucide="wrench"></i>
-                        </div>
-                        <h3>Databases & Tools</h3>
-                    </div>
-                    <ul class="skill-list">
-                        <li>
-                            <div class="skill-info"><span>MySQL</span><span class="skill-level">Advanced</span></div>
-                            <div class="skill-bar"><div class="skill-progress bar-mysql" style="width: 85%;"></div></div>
-                        </li>
-                        <li>
-                            <div class="skill-info"><span>Redis & RabbitMQ</span><span class="skill-level">Intermediate</span></div>
-                            <div class="skill-bar"><div class="skill-progress bar-redis" style="width: 78%;"></div></div>
-                        </li>
-                        <li>
-                            <div class="skill-info"><span>Docker & Containers</span><span class="skill-level">Intermediate</span></div>
-                            <div class="skill-bar"><div class="skill-progress bar-docker" style="width: 80%;"></div></div>
-                        </li>
-                        <li>
-                            <div class="skill-info"><span>Git & GitHub</span><span class="skill-level">Advanced</span></div>
-                            <div class="skill-bar"><div class="skill-progress bar-git" style="width: 88%;"></div></div>
-                        </li>
-                        <li>
-                            <div class="skill-info"><span>Swagger & Zipkin</span><span class="skill-level">Intermediate</span></div>
-                            <div class="skill-bar"><div class="skill-progress bar-zipkin" style="width: 75%;"></div></div>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Timeline Section -->
-    <section class="experience-section" id="experience">
-        <div class="section-container">
-            <h2 class="section-title text-center"><span class="gradient-text">Experience</span></h2>
-            <p class="section-subtitle text-center">My professional growth and training</p>
-
-            <div class="timeline">
-                <div class="timeline-glow-line"></div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-node"></div>
-                    <div class="timeline-content card-glass">
-                        <span class="timeline-date">December 2025 — May 2026</span>
-                        <h3>Full Stack Developer Trainee</h3>
-                        <h4 class="timeline-company">Capgemini</h4>
-                        <p class="timeline-location"><i data-lucide="map-pin"></i> Remote / Hybrid</p>
-                        <ul class="timeline-points">
-                            <li>Collaborated in agile team environments to build and refine robust full-stack web applications using Java Spring Boot on the backend and Angular on the frontend.</li>
-                            <li>Integrated RESTful APIs, handled secure JWT authentication mechanisms, and structured efficient SQL database schemas.</li>
-                            <li>Participated in containerized deployments using Docker and set up automated unit/integration tests to ensure stable delivery.</li>
-                        </ul>
-                    </div>
-                </div>
+    <!-- ===== PROJECTS ===== -->
+    <section class="section" id="projects">
+        <div class="section-inner">
+            <div class="section-label reveal-up">
+                <span class="label-num">03</span>
+                <span class="label-text">Projects</span>
             </div>
-        </div>
-    </section>
+            <p class="section-intro reveal-up">Hover over each project to preview. Click to open.</p>
 
-    <!-- Projects Section -->
-    <section class="projects-section" id="projects">
-        <div class="section-container">
-            <h2 class="section-title text-center">Featured <span class="gradient-text">Projects</span></h2>
-            <p class="section-subtitle text-center">A showcase of systems and models I've developed</p>
-
-            <!-- Project Filters -->
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="java">Spring Boot / Java</button>
-                <button class="filter-btn" data-filter="ml">Machine Learning / Python</button>
-            </div>
-
-            <!-- Projects Grid -->
-            <div class="projects-grid">
+            <ul class="project-list">
                 <!-- Project 1 -->
-                <div class="project-card card-glass" data-tech="java">
-                    <div class="project-img-wrapper">
-                        <div class="project-img-glow"></div>
-                        <img src="assets/project_smartsure.png" alt="Smartsure Insurance Management System" class="project-img" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80'">
-                        <div class="project-links-overlay">
-                            <a href="https://github.com/Gungunaggarwal/smartsecure-insurance-management-system" target="_blank" rel="noopener noreferrer" class="overlay-link-btn" title="GitHub Source">
-                                <i data-lucide="github"></i>
-                            </a>
-                            <a href="https://github.com/Gungunaggarwal/smartsecure-insurance-management-system" target="_blank" rel="noopener noreferrer" class="overlay-link-btn" title="Live Demo">
-                                <i data-lucide="external-link"></i>
-                            </a>
+                <li class="project-row reveal-up"
+                    data-img="assets/project_smartsure.png?v=3"
+                    data-href="https://github.com/Gungunaggarwal/smartsecure-insurance-management-system">
+                    <div class="project-row-inner">
+                        <div class="project-row-left">
+                            <span class="project-index">01</span>
+                            <div class="project-info">
+                                <h3 class="project-title">SmartSecure Insurance Management</h3>
+                                <p class="project-subtitle">Microservices · Spring Boot · Angular · Docker</p>
+                            </div>
+                        </div>
+                        <div class="project-row-right">
+                            <div class="project-tags-inline">
+                                <span>Java</span><span>RabbitMQ</span><span>Redis</span><span>JWT</span><span>Zipkin</span>
+                            </div>
+                            <a href="https://github.com/Gungunaggarwal/smartsecure-insurance-management-system"
+                               target="_blank" rel="noopener"
+                               class="project-arrow" aria-label="Open project">↗</a>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <span class="project-category">Full-Stack / Microservices</span>
-                        <h3 class="project-title">Smartsure Insurance Management</h3>
-                        <p class="project-desc">
-                            A microservices-based insurance system using Spring Boot and Angular with modules for policy purchasing, claims handling, and admin control. Scaled and decoupled using message queue architectures.
-                        </p>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">Spring Boot</span>
-                            <span class="tech-tag">Angular</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">RabbitMQ</span>
-                            <span class="tech-tag">Redis</span>
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Zipkin</span>
-                        </div>
-                    </div>
-                </div>
+                </li>
 
                 <!-- Project 2 -->
-                <div class="project-card card-glass" data-tech="ml">
-                    <div class="project-img-wrapper">
-                        <div class="project-img-glow"></div>
-                        <img src="assets/project_aqi.png" alt="Air Quality Monitoring System" class="project-img" onerror="this.src='https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&w=600&q=80'">
-                        <div class="project-links-overlay">
-                            <a href="https://github.com/gungunaggarwal/Air-Quality-Monitoring-and-Prediction-System" target="_blank" rel="noopener noreferrer" class="overlay-link-btn" title="GitHub Source">
-                                <i data-lucide="github"></i>
-                            </a>
-                            <a href="https://air-quality-monitoring-and-prediction.streamlit.app/" target="_blank" rel="noopener noreferrer" class="overlay-link-btn" title="Live Demo">
-                                <i data-lucide="external-link"></i>
-                            </a>
+                <li class="project-row reveal-up"
+                    data-img="assets/project_aqi.png?v=3"
+                    data-href="https://air-quality-monitoring-and-prediction.streamlit.app/">
+                    <div class="project-row-inner">
+                        <div class="project-row-left">
+                            <span class="project-index">02</span>
+                            <div class="project-info">
+                                <h3 class="project-title">Air Quality Prediction System</h3>
+                                <p class="project-subtitle">Deep Learning · LSTM / GRU · Streamlit · Python</p>
+                            </div>
+                        </div>
+                        <div class="project-row-right">
+                            <div class="project-tags-inline">
+                                <span>TensorFlow</span><span>RNN</span><span>R² 0.999</span><span>AQI API</span>
+                            </div>
+                            <a href="https://air-quality-monitoring-and-prediction.streamlit.app/"
+                               target="_blank" rel="noopener"
+                               class="project-arrow" aria-label="Open project">↗</a>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <span class="project-category">Deep Learning / Data Science</span>
-                        <h3 class="project-title">Air Quality Prediction System</h3>
-                        <p class="project-desc">
-                            An end-to-end forecasting dashboard leveraging Streamlit and neural sequence models (RNN, LSTM, GRU). Predicts real-time AQI indices using API integrations, achieving up to 0.999 R² forecasting accuracy.
-                        </p>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">TensorFlow</span>
-                            <span class="tech-tag">Streamlit</span>
-                            <span class="tech-tag">RNN</span>
-                            <span class="tech-tag">LSTM</span>
-                            <span class="tech-tag">GRU</span>
-                        </div>
-                    </div>
-                </div>
+                </li>
 
                 <!-- Project 3 -->
-                <div class="project-card card-glass" data-tech="ml">
-                    <div class="project-img-wrapper">
-                        <div class="project-img-glow"></div>
-                        <img src="assets/project_music.png" alt="Music Recommendation System" class="project-img" onerror="this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80'">
-                        <div class="project-links-overlay">
-                            <a href="https://github.com/Gungunaggarwal/music_recommendation-system" target="_blank" rel="noopener noreferrer" class="overlay-link-btn" title="GitHub Source">
-                                <i data-lucide="github"></i>
-                            </a>
-                            <a href="https://github.com/Gungunaggarwal/music_recommendation-system" target="_blank" rel="noopener noreferrer" class="overlay-link-btn" title="Live Demo">
-                                <i data-lucide="external-link"></i>
-                            </a>
+                <li class="project-row reveal-up"
+                    data-img="assets/project_music.png?v=3"
+                    data-href="https://github.com/Gungunaggarwal/music_recommendation-system">
+                    <div class="project-row-inner">
+                        <div class="project-row-left">
+                            <span class="project-index">03</span>
+                            <div class="project-info">
+                                <h3 class="project-title">Music Recommendation System</h3>
+                                <p class="project-subtitle">Machine Learning · KNN · Streamlit · 170k+ Songs</p>
+                            </div>
+                        </div>
+                        <div class="project-row-right">
+                            <div class="project-tags-inline">
+                                <span>Scikit-Learn</span><span>Pandas</span><span>Content-Based</span>
+                            </div>
+                            <a href="https://github.com/Gungunaggarwal/music_recommendation-system"
+                               target="_blank" rel="noopener"
+                               class="project-arrow" aria-label="Open project">↗</a>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <span class="project-category">Machine Learning</span>
-                        <h3 class="project-title">KNN Music Recommendation System</h3>
-                        <p class="project-desc">
-                            Interactive content-based recommendation platform preprocessing a Kaggle catalog of 170k+ songs. Users can dynamically tune audio preferences using sliders to match song acoustic features.
-                        </p>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Scikit-Learn</span>
-                            <span class="tech-tag">K-Nearest Neighbors</span>
-                            <span class="tech-tag">Streamlit</span>
-                            <span class="tech-tag">Pandas</span>
-                        </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== CERTIFICATIONS ===== -->
+    <section class="section" id="certifications">
+        <div class="section-inner">
+            <div class="section-label reveal-up">
+                <span class="label-num">04</span>
+                <span class="label-text">Certifications & Leadership</span>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-card tilt-card reveal-up">
+                    <span class="cert-icon-char">⌘</span>
+                    <div>
+                        <h3 class="cert-name">Generative AI for Everyone</h3>
+                        <span class="cert-issuer">DeepLearning.AI</span>
+                    </div>
+                </div>
+                <div class="cert-card tilt-card reveal-up">
+                    <span class="cert-icon-char">◈</span>
+                    <div>
+                        <h3 class="cert-name">Introduction to Large Language Models</h3>
+                        <span class="cert-issuer">Google Cloud</span>
+                    </div>
+                </div>
+                <div class="cert-card tilt-card reveal-up">
+                    <span class="cert-icon-char">∞</span>
+                    <div>
+                        <h3 class="cert-name">Programming in C++: Hands-on Introduction</h3>
+                        <span class="cert-issuer">Codio</span>
+                    </div>
+                </div>
+                <div class="cert-card tilt-card reveal-up highlight-card">
+                    <span class="cert-icon-char">✦</span>
+                    <div>
+                        <h3 class="cert-name">Event Manager</h3>
+                        <span class="cert-issuer">Ojaswi Club, LPU · Jan – July 2024</span>
+                        <p class="cert-desc">Managed college events coordinating logistics, promotional campaigns and team collaboration across departments.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Certifications & Extracurriculars Section -->
-    <section class="certifications-section" id="certifications">
-        <div class="section-container">
-            <div class="cert-extra-grid">
-                <!-- Certifications -->
-                <div class="certifications-panel">
-                    <h2 class="section-title"><span class="gradient-text">Certifications</span></h2>
-                    <div class="certs-list">
-                        <div class="cert-card card-glass">
-                            <div class="cert-icon">
-                                <i data-lucide="award"></i>
-                            </div>
-                            <div class="cert-details">
-                                <h3>Generative AI for Everyone</h3>
-                                <p class="cert-issuer">DeepLearning.AI</p>
-                            </div>
-                        </div>
-
-                        <div class="cert-card card-glass">
-                            <div class="cert-icon">
-                                <i data-lucide="award"></i>
-                            </div>
-                            <div class="cert-details">
-                                <h3>Introduction to Large Language Models</h3>
-                                <p class="cert-issuer">Google Cloud</p>
-                            </div>
-                        </div>
-
-                        <div class="cert-card card-glass">
-                            <div class="cert-icon">
-                                <i data-lucide="award"></i>
-                            </div>
-                            <div class="cert-details">
-                                <h3>Programming in C++: A Hands-on Introduction</h3>
-                                <p class="cert-issuer">Codio</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Extracurricular Activities -->
-                <div class="extra-panel">
-                    <h2 class="section-title"><span class="gradient-text">Leadership & Extracurriculars</span></h2>
-                    <div class="extra-card card-glass">
-                        <div class="extra-icon">
-                            <i data-lucide="users"></i>
-                        </div>
-                        <div class="extra-details">
-                            <span class="timeline-date">Jan 2024 — July 2024</span>
-                            <h3>Event Manager</h3>
-                            <h4 class="extra-org">Ojaswi Club, Lovely Professional University</h4>
-                            <p class="extra-desc">
-                                Managed and organized college events, coordinating logistics, promotional campaigns, and venue setups. Enhanced interpersonal management, operational agility, and team collaboration skills.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+    <!-- ===== CONTACT ===== -->
+    <section class="section" id="contact">
+        <div class="section-inner">
+            <div class="section-label reveal-up">
+                <span class="label-num">05</span>
+                <span class="label-text">Contact</span>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="section-container">
-            <h2 class="section-title text-center">Get In <span class="gradient-text">Touch</span></h2>
-            <p class="section-subtitle text-center">Have a question or want to work together?</p>
-
-            <div class="contact-grid">
-                <div class="contact-info-panel card-glass">
-                    <h3>Contact Information</h3>
-                    <p>Feel free to reach out. I'll get back to you as soon as possible.</p>
-                    
-                    <div class="contact-methods">
-                        <div class="method-item">
-                            <div class="method-icon">
-                                <i data-lucide="mail"></i>
-                            </div>
-                            <div>
-                                <h4>Email</h4>
-                                <a href="mailto:gungunaggarwal15@gmail.com" class="method-link">gungunaggarwal15@gmail.com</a>
-                            </div>
-                        </div>
-
-                        <div class="method-item">
-                            <div class="method-icon">
-                                <i data-lucide="github"></i>
-                            </div>
-                            <div>
-                                <h4>GitHub</h4>
-                                <a href="https://github.com/Gungunaggarwal" target="_blank" rel="noopener noreferrer" class="method-link">github.com/Gungunaggarwal</a>
-                            </div>
-                        </div>
-
-                        <div class="method-item">
-                            <div class="method-icon">
-                                <i data-lucide="linkedin"></i>
-                            </div>
-                            <div>
-                                <h4>LinkedIn</h4>
-                                <a href="https://linkedin.com/in/gungunaggarwal" target="_blank" rel="noopener noreferrer" class="method-link">linkedin.com/in/gungunaggarwal</a>
-                            </div>
-                        </div>
-
-                        <div class="method-item">
-                            <div class="method-icon">
-                                <i data-lucide="map-pin"></i>
-                            </div>
-                            <div>
-                                <h4>Location</h4>
-                                <p class="method-text">Panchkula, Haryana, India</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contact-social-prompt">
-                        <h4>Social Profiles</h4>
-                        <div class="social-links-row">
-                            <a href="https://github.com/Gungunaggarwal" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github"></i></a>
-                            <a href="https://linkedin.com/in/gungunaggarwal" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-                        </div>
+            <div class="contact-layout">
+                <div class="contact-left reveal-up">
+                    <h2 class="contact-heading">Let's build<br><em>something together.</em></h2>
+                    <p class="body-text">Whether you have a role in mind, want to collaborate, or just want to talk engineering — reach out.</p>
+                    <div class="contact-links-col">
+                        <a href="mailto:gungunaggarwal15@gmail.com" class="contact-text-link">
+                            <span class="clink-label">Email</span>
+                            <span class="clink-val">gungunaggarwal15@gmail.com ↗</span>
+                        </a>
+                        <a href="https://github.com/Gungunaggarwal" target="_blank" rel="noopener" class="contact-text-link">
+                            <span class="clink-label">GitHub</span>
+                            <span class="clink-val">github.com/Gungunaggarwal ↗</span>
+                        </a>
+                        <a href="https://linkedin.com/in/gungunaggarwal" target="_blank" rel="noopener" class="contact-text-link">
+                            <span class="clink-label">LinkedIn</span>
+                            <span class="clink-val">linkedin.com/in/gungunaggarwal ↗</span>
+                        </a>
                     </div>
                 </div>
-
-                <!-- Form Panel -->
-                <div class="contact-form-panel card-glass">
+                <div class="contact-right reveal-up">
                     <form id="contact-form" class="contact-form">
-                        <div class="form-group">
+                        <div class="form-field">
                             <label for="form-name">Name</label>
-                            <input type="text" id="form-name" required placeholder="John Doe">
+                            <input type="text" id="form-name" required placeholder="Your name">
                         </div>
-                        <div class="form-group">
+                        <div class="form-field">
                             <label for="form-email">Email</label>
-                            <input type="email" id="form-email" required placeholder="john@example.com">
+                            <input type="email" id="form-email" required placeholder="your@email.com">
                         </div>
-                        <div class="form-group">
+                        <div class="form-field">
                             <label for="form-subject">Subject</label>
-                            <input type="text" id="form-subject" required placeholder="Project Collaboration">
+                            <input type="text" id="form-subject" required placeholder="What is this about?">
                         </div>
-                        <div class="form-group">
+                        <div class="form-field">
                             <label for="form-message">Message</label>
-                            <textarea id="form-message" rows="5" required placeholder="Hi Gungun, I would like to talk about..."></textarea>
+                            <textarea id="form-message" rows="4" required placeholder="Write your message here..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-submit">
-                            Send Message <i data-lucide="send"></i>
+                        <button type="submit" class="form-submit-btn" id="form-submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-arrow">→</span>
                         </button>
                         <div id="form-feedback" class="form-feedback hidden"></div>
                     </form>
@@ -604,17 +361,14 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <p class="copyright">&copy; 2026 Gungun Aggarwal. All rights reserved.</p>
-            <div class="footer-bottom-links">
-                <a href="#hero">Back to Top <i data-lucide="arrow-up" class="footer-arrow"></i></a>
-            </div>
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span class="footer-name">Gungun Aggarwal · 2026</span>
+            <a href="#hero" class="footer-back-top">Back to top ↑</a>
         </div>
     </footer>
 
-    <!-- Custom JavaScript -->
-    <script src="app.js"></script>
+    <script src="app.js?v=2"></script>
 </body>
 </html>
